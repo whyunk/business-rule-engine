@@ -34,4 +34,16 @@ class BusinessRuleEngineTest {
 
         verify(mockAction).execute();
     }
+
+    @Test
+    void shouldExecuteAnActionWithFacts() {
+        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine();
+        final Action mockAction = mock(Action.class);
+        final Facts mockFacts = mock(Facts.class);
+
+        businessRuleEngine.addAction(mockAction);
+        businessRuleEngine.run();
+
+        verify(mockAction).execute(mockFacts);
+    }
 }
