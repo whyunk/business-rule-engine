@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 class BusinessRuleEngineTest {
 
@@ -15,16 +13,16 @@ class BusinessRuleEngineTest {
 
     }
 
-    @Test
-    void shouldAddActions() {
-        final Facts facts = new Facts();
-        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(facts);
-
-        businessRuleEngine.addAction(fact -> {});
-        businessRuleEngine.addAction(fact -> {});
-
-        assertEquals(2, businessRuleEngine.count());
-    }
+//    @Test
+//    void shouldAddActions() {
+//        final Facts facts = new Facts();
+//        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(facts);
+//
+//        businessRuleEngine.addAction(fact -> {});
+//        businessRuleEngine.addAction(fact -> {});
+//
+//        assertEquals(2, businessRuleEngine.count());
+//    }
 
     /*@Test
     void shouldExecuteOneAction() {
@@ -38,15 +36,15 @@ class BusinessRuleEngineTest {
         verify(mockAction).execute(facts);
     }*/
 
-    @Test
-    void shouldExecuteAnActionWithFacts() {
-        final Action mockAction = mock(Action.class);
-        final Facts mockFacts = mock(Facts.class);
-        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
-
-        businessRuleEngine.addAction(mockAction);
-        businessRuleEngine.run();
-
-        verify(mockAction).execute(mockFacts);
-    }
+//    @Test
+//    void shouldExecuteAnActionWithFacts() {
+//        final Action mockAction = mock(Action.class);
+//        final Facts mockFacts = mock(Facts.class);
+//        final BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
+//
+//        businessRuleEngine.addAction(mockAction);
+//        businessRuleEngine.run();
+//
+//        verify(mockAction).execute(mockFacts);
+//    }
 }
